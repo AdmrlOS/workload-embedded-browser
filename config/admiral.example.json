@@ -1,0 +1,25 @@
+{
+  "name": "embedded-browser",
+  "image": "ghcr.io/admrlos/workload-embedded-browser:REPLACE_WITH_PUBLISHED_VERSION",
+  "desiredState": "RUNNING",
+  "command": [],
+  "env": {
+    "BROWSER_URL": "https://dashboard.example.com/",
+    "BROWSER_VIDEO_MODE": "holepunch",
+    "BROWSER_ALLOW_SOFTWARE": "0",
+    "BROWSER_DATA_DIR": "/data"
+  },
+  "options": {
+    "interactive": true,
+    "isolateDevices": false,
+    "readOnlyRoot": false,
+    "namespaces": []
+  },
+  "volumes": {
+    "browser-data": {
+      "destination": "/data",
+      "options": ["bind", "rw"]
+    }
+  },
+  "ports": []
+}

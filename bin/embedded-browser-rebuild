@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+make -C /opt/embedded-browser/src/native clean all install
+make -C /opt/embedded-browser/src/browser clean all install
+ldconfig
+echo 'Rebuilt browser and video adapter. Restart the workload to load them.'

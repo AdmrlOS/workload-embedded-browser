@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Embedded dashboard example</title>
+<style>
+html { background: #102036; color: #ecf4ff; font: 3vw system-ui,sans-serif; }
+body { margin: 10vh 8vw; } p { color: #acbfd8; } time { font-variant-numeric: tabular-nums; }
+</style>
+<h1>Embedded dashboard</h1>
+<p>Local application · Admiral embedded browser</p>
+<time id="clock"></time>
+<script>
+const tick = () => document.getElementById('clock').textContent = new Date().toLocaleString();
+tick(); setInterval(tick, 1000);
+</script>
+</html>

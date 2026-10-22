@@ -1,0 +1,20 @@
+# Run on a dedicated Linux board with sole ownership of the display.
+services:
+  browser:
+    image: workload-embedded-browser:dev
+    build: .
+    platform: linux/arm64
+    privileged: true
+    network_mode: host
+    shm_size: 512m
+    environment:
+      BROWSER_URL: ${BROWSER_URL:-}
+      BROWSER_VIDEO_MODE: ${BROWSER_VIDEO_MODE:-holepunch}
+      BROWSER_DRM_DEVICE: ${BROWSER_DRM_DEVICE:-}
+      BROWSER_RENDER_DEVICE: ${BROWSER_RENDER_DEVICE:-}
+    volumes:
+      - /dev:/dev
+      - /run/udev:/run/udev:ro
+      - browser-data:/data
+volumes:
+  browser-data:

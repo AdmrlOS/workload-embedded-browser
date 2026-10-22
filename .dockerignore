@@ -1,0 +1,14 @@
+.git
+.github
+output
+__pycache__
+**/__pycache__
+*.pyc
+**/*.pyc
+*.oci.tar
+native/*.so
+native/*.o
+browser/embedded-browser
+browser/embedded-browser-bwrap
+tests
+*.env
